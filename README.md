@@ -76,14 +76,17 @@ Although December is not as dry as June is, it is comparably still favorable wit
 
 writing this function, we can gather average temperature and precipitations by locations
 
-`
+```
 def calc_temps_rain(val_month):
-    sel = [Measurement.station, func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs),\
-           func.min(Measurement.prcp), func.avg(Measurement.prcp), func.max(Measurement.prcp)]
-    results = session.query(*sel).group_by(Measurement.station).filter(extract('month', Measurement.date)==val_month).all()
-    stations_df = pd.DataFrame(results, columns = ['station', 'minTob' , 'avgTob', 'maxTob','minprcp' , 'avgprcp', 'maxprcp']) 
-    return stations_df
-`
+        sel = [Measurement.station, func.min(Measurement.tobs), func.avg(Measurement.tobs),\
+                        func.max(Measurement.tobs),func.min(Measurement.prcp), \
+                        func.avg(Measurement.prcp), func.max(Measurement.prcp)]
+        results = session.query(*sel).group_by(Measurement.station).\
+                        filter(extract('month', Measurement.date)==val_month).all()
+        stations_df = pd.DataFrame(results, columns = ['station', 'minTob' , 'avgTob', \
+                                                'maxTob','minprcp' , 'avgprcp', 'maxprcp']) 
+        return stations_df
+```
 
 We can extract a summary of values that can help us determine which location can give use the least amount of rainfall and desirable temperatures to plot a location for the store where typically we would prefer a combination that would give us a higher Avg Tob temperature while having the lowest average prcp Precipitation.
 
