@@ -14,7 +14,7 @@ The propose of this analysis is to determine the feasibility of year round busin
 ## Resources
 
 - Data Source:   [hawaii.sqlite](hawaii.sqlite)
-- Query and Database creation files: [SurfsUp_Challenge](SurfsUp_Challenge.ipyfd), [climate_analysis](climate_analysis.ipynb), [Flask test program app.py](app.py),
+- Query and Database creation files: [SurfsUp_Challenge.ipynb](SurfsUp_Challenge.ipynb), [climate_analysis.ipynb](climate_analysis.ipynb), [Flask test program app.py](app.py),
 - Results: [temps_june](Resources/temps_june.png), [temps_dec](Resources/temps_dec.png), [precipitation_june](Resources/precipitation_june.png), [precipitation_dec](Resources/precipitation_dec.png), [best_location](Resources/best_location.PNG)
 - Software: SQLite, DB Browser for SQLite 3.12.1, Python 3.7.9, Flask 1.1.2, Jupyter notebook.6.1.4
 
